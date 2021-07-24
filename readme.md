@@ -10,5 +10,7 @@ $ docker-compose up -d
 $ docker-compose exec web sh
 
 # create tables and seed data
-You might encounter an error because db might not be finished initializing. Please wait for a moment before running the command
+You might encounter an error because db might not be finished initializing. 
+Please wait for a moment before running the command
+
 $ php artisan migrate -seed
