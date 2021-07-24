@@ -89,11 +89,12 @@
                             $('#message').html( errorsHtml ); //appending to a <div id="form-errors"></div> inside form  
                         });
 
-                    if (response.data) {
-                        $('#message').text(response.data.message).addClass(response.data.class);
+                    $('#message').text(response.data.message).addClass(response.data.class);
+                    
+                    if (response.status == 200) {
                         setTimeout(function() {
-                            $('#message').empty().removeClass(response.data.class);
-                        }, 3000);
+                            window.location = "{{ route('kangaroos.index') }}";
+                        }, 2000);
                     }
                 } catch (error) {
                     console.log(error);
